@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "爆炸吧，小鼠标！",
+  "version": "0.0.1",
+  "description": "小鼠标在线爆炸",
+  "author": "田某人",
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": ["index.js"]
+  }]
+}
