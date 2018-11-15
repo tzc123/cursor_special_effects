@@ -5,8 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+
+  img {
+    margin-left: 200px;
+    margin-top: 200px;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotateZ(-360deg)
+    }
+  }
+  </style>
 </head>
 <body>
+  <img src="./rotate.png" width="100" height="100" alt="">
   <script src="./index.js"></script>
 </body>
+<script>
+const img = document.querySelector('img')
+let i = 0
+function run () {
+  const time = 0.5 - i * 0.01 > 0.01 ? 0.5 - i * 0.01 : 0.01
+  img.style.animation = `rotate ${time}s infinite linear`
+  i++
+  setTimeout(() => {
+    run()
+  }, time * 1000);
+}
+
+run()
+</script>
 </html>
